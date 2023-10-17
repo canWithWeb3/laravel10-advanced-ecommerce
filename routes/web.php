@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->controller(PageController::class)->group(function(){
-    Route::get("/", "get_home");
+    Route::get("/", "getHome");
+});
+
+Route::prefix("/")->controller(AuthController::class)->group(function(){
+    Route::get("/kayit-ol", "getRegister")->middleware("not_auth");
+    Route::post("/kayit-ol", "postRegister")->middleware("not_auth");
+    Route::get("/giris-yap", "getLogin")->middleware("not_auth");
+    Route::post("/giris-yap", "postLogin")->middleware("not_auth");
+    Route::post("/cikis-yap", "postLogout")->middleware("auth");
 });
