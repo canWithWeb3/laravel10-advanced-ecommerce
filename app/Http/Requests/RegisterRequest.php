@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             "username" => "bail|required|min:3|max:15|unique:users",
-            "email" => "bail|required|unique:users",
+            "email" => "bail|required|max:255|unique:users",
             "password" => "bail|required|min:5|max:15|same:repassword",
         ];
     }

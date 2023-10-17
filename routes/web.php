@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
@@ -30,4 +31,5 @@ Route::prefix("/")->controller(AuthController::class)->group(function(){
 
 Route::prefix("/admin")->middleware("admin")->group(function(){
     Route::get("/", [AdminController::class, "getDashboard"]);
+    Route::resource("/kategoriler", CategoryController::class);
 });
