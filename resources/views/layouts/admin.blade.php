@@ -16,7 +16,11 @@
   <body>
     <div class="admin">
         <div class="sidebar">
+<<<<<<< HEAD
             <a href="{{ url("/") }}" class="sidebar-brand">Ecommerce</a>
+=======
+            <a href="{{ url("/") }}" class="sidebar-brand"><i class="fa-solid fa-book"></i> Bookly</a>
+>>>>>>> e31d9112ccb8fb224b2f2f7e1572e99cd7ba2f47
             <div class="sidebar-menu">
                 <a href="{{ url("/") }}" class="sidebar-menu-link">Dashboard</a>
                 <a href="{{ url("/admin/categories") }}" class="sidebar-menu-link">Kategoriler</a>
