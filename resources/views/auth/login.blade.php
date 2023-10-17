@@ -6,7 +6,7 @@
     <div class="container my-5">
         <div class="col-xl-5 col-lg-7 col-md-10 col-12 mx-auto">
             <div class="card">
-                <div class="card-header">Giriş Yap asdsa</div>
+                <div class="card-header">Giriş Yap</div>
                 <div class="card-body">
                     <form method="POST">
                         @csrf
