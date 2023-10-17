@@ -26,6 +26,11 @@
 
         {{-- auth start --}}
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            @admin
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url("/admin") }}">Admin</a>
+              </li>
+            @endadmin
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 @auth
@@ -37,8 +42,10 @@
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 @auth
                   <li><a class="dropdown-item" href="{{ url("/profilim") }}">Profilim</a></li>
-                  <li><a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="/cikis-yap">Çıkış Yap</a></li>
-                  <form action="{{ url("/cikis-yap") }}" id="logout-form" method="POST" class="d-none"> @csrf </form>
+                  <li>
+                    <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="/cikis-yap">Çıkış Yap</a>
+                    <form action="{{ url("/cikis-yap") }}" id="logout-form" method="POST" class="d-none"> @csrf </form>
+                  </li>
                 @else
                   <li><a class="dropdown-item" href="{{ url("/giris-yap") }}">Giriş Yap</a></li>
                   <li><a class="dropdown-item" href="{{ url("/kayit-ol") }}">Kayıt Ol</a></li>
