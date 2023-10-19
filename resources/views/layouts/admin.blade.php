@@ -68,7 +68,11 @@
     {{-- dom content loaded scripts --}}
     <script>
       $(document).ready(function(){
-        new DataTable('.datatable');
+        $('.datatable').DataTable({
+            "language": {
+                "url": "{{ asset('json/datatable-tr.json') }}"
+            }
+        });
         @include("includes.toastr")
 
         // delete modal
